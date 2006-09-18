@@ -1,0 +1,85 @@
+a52dec
+-------------------------------------------
+liba52 is a free library for decoding ATSC A/52 streams. It is released
+under the terms of the GPL license. The A/52 standard is used in a
+variety of applications, including digital television and DVD. It is
+also known as AC-3.
+
+Runtime requirements:
+  cygwin-1.5.21-1
+
+Build requirements:
+  cygwin-1.5.21-1
+  autoconf2.5-2.59-2
+  automake1.9-1.9.6-1
+  binutils-20060709-1
+  cygport-0.2.5-1
+  gawk-3.1.4-3
+  gcc-core-3.4.4-1
+  libtool1.5-1.5.22-1
+  make-3.81-1
+  sed-4.1.5-1
+
+Canonical homepage:
+  http://liba52.sourceforge.net/
+
+Canonical download:
+  http://liba52.sourceforge.net/files/
+
+-------------------------------------------
+
+Build instructions:
+  unpack a52dec-0.7.4-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./a52dec-0.7.4-X.cygport all
+
+This will create:
+  /usr/src/a52dec-0.7.4-X-src.tar.bz2
+  /usr/src/a52dec-0.7.4-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(a52dec)
+  /usr/bin/a52dec.exe
+  /usr/bin/extract_a52.exe
+  /usr/share/doc/Cygwin/a52dec-0.7.4.README
+  /usr/share/doc/a52dec-0.7.4/AUTHORS
+  /usr/share/doc/a52dec-0.7.4/ChangeLog
+  /usr/share/doc/a52dec-0.7.4/COPYING
+  /usr/share/doc/a52dec-0.7.4/INSTALL
+  /usr/share/doc/a52dec-0.7.4/liba52.txt
+  /usr/share/doc/a52dec-0.7.4/NEWS
+  /usr/share/doc/a52dec-0.7.4/README
+  /usr/share/doc/a52dec-0.7.4/TODO
+  /usr/share/man/man1/a52dec.1.gz
+  /usr/share/man/man1/extract_a52.1.gz
+
+(liba52_0)
+  /usr/bin/cyga52-0.dll
+
+(liba52-devel)
+  /usr/include/a52dec/a52.h
+  /usr/include/a52dec/attributes.h
+  /usr/include/a52dec/audio_out.h
+  /usr/include/a52dec/mm_accel.h
+  /usr/lib/liba52.a
+  /usr/lib/liba52.dll.a
+  /usr/lib/liba52.la
+
+------------------
+
+Port Notes:
+
+----- version 0.7.4-2 -----
+Rebuilt with cygport; created separate runtime and devel packages.
+
+----- version 0.7.4-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwin-ports.sourceforge.net/
