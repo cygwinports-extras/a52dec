@@ -1,0 +1,63 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x mdate-sh -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/a52dec-0.7.4/configure.in src/a52dec-0.7.4/configure.in
+--- origsrc/a52dec-0.7.4/configure.in	2002-07-27 22:50:20.000000000 -0500
++++ src/a52dec-0.7.4/configure.in	2007-02-15 21:38:28.562500000 -0600
+@@ -71,7 +71,7 @@
+ fi
+ 
+ dnl Checks for libtool - this must be done after we set cflags
+-AC_DISABLE_SHARED
++dnl AC_DISABLE_SHARED
+ AC_LIBTOOL_WIN32_DLL
+ AC_PROG_LIBTOOL
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x mdate-sh -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/a52dec-0.7.4/liba52/Makefile.am src/a52dec-0.7.4/liba52/Makefile.am
+--- origsrc/a52dec-0.7.4/liba52/Makefile.am	2002-01-27 22:36:48.000000000 -0600
++++ src/a52dec-0.7.4/liba52/Makefile.am	2007-02-15 21:38:28.562500000 -0600
+@@ -1,4 +1,4 @@
+-CFLAGS = @CFLAGS@ @LIBA52_CFLAGS@
++AM_CFLAGS = @CFLAGS@ @LIBA52_CFLAGS@
+ 
+ lib_LTLIBRARIES = liba52.la
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x mdate-sh -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/a52dec-0.7.4/liba52/configure.incl src/a52dec-0.7.4/liba52/configure.incl
+--- origsrc/a52dec-0.7.4/liba52/configure.incl	2002-01-27 22:36:48.000000000 -0600
++++ src/a52dec-0.7.4/liba52/configure.incl	2007-02-15 21:38:28.968750000 -0600
+@@ -2,7 +2,7 @@
+ AC_SUBST([LIBA52_LIBS])
+ 
+ dnl avoid -fPIC when possible
+-LIBA52_CFLAGS="$LIBA52_CFLAGS -prefer-non-pic"
++dnl LIBA52_CFLAGS="$LIBA52_CFLAGS -prefer-non-pic"
+ 
+ AC_ARG_ENABLE([double],
+     [  --enable-double         use double-precision samples])
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x mdate-sh -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/a52dec-0.7.4/libao/configure.incl src/a52dec-0.7.4/libao/configure.incl
+--- origsrc/a52dec-0.7.4/libao/configure.incl	2002-04-28 05:23:02.000000000 -0500
++++ src/a52dec-0.7.4/libao/configure.incl	2007-02-15 21:38:28.984375000 -0600
+@@ -5,7 +5,7 @@
+     [  --disable-oss           make a version not using oss])
+ if test x"$enable_oss" != x"no"; then
+     case "$host" in
+-    *-linux*|*-openbsd*|*-freebsd*|*-bsdi*)
++    *-linux*|*-openbsd*|*-freebsd*|*-bsdi*|*-cygwin*)
+ 	AC_DEFINE([LIBAO_OSS],,[libao OSS support])
+ 	AC_CHECK_LIB([ossaudio],[_oss_ioctl],
+ 	    [LIBAO_LIBS="$LIBAO_LIBS -lossaudio"]);;
+@@ -38,7 +38,7 @@
+     [  --disable-win           make a version not using win audio])
+ if test x"$enable_win" != x"no"; then
+     case "$host" in
+-    *-mingw32*|*-cygwin)
++    *-mingw32*)
+ 	LIBAO_LIBS="$LIBAO_LIBS -lwinmm"
+ 	AC_DEFINE([LIBAO_WIN],,[libao win support]);;
+     esac
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x mdate-sh -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/a52dec-0.7.4/src/Makefile.am src/a52dec-0.7.4/src/Makefile.am
+--- origsrc/a52dec-0.7.4/src/Makefile.am	2002-06-22 20:51:57.000000000 -0500
++++ src/a52dec-0.7.4/src/Makefile.am	2007-02-15 21:38:28.984375000 -0600
+@@ -1,4 +1,4 @@
+-CFLAGS = @A52DEC_CFLAGS@
++AM_CFLAGS = @A52DEC_CFLAGS@
+ 
+ bin_PROGRAMS = a52dec extract_a52
+ a52dec_SOURCES = a52dec.c getopt.c gettimeofday.c

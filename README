@@ -6,19 +6,19 @@ variety of applications, including digital television and DVD. It is
 also known as AC-3.
 
 Runtime requirements:
-  cygwin-1.5.21-1
+  cygwin-1.5.24-2
 
 Build requirements:
-  cygwin-1.5.21-1
-  autoconf2.5-2.59-2
-  automake1.9-1.9.6-1
-  binutils-20060709-1
-  cygport-0.2.5-1
-  gawk-3.1.4-3
-  gcc-core-3.4.4-1
-  libtool1.5-1.5.22-1
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  binutils-20060817-1
+  cygport-0.2.9-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  libtool1.5-1.5.23a-2
   make-3.81-1
-  sed-4.1.5-1
+  sed-4.1.5-2
 
 Canonical homepage:
   http://liba52.sourceforge.net/
@@ -38,6 +38,8 @@ Build instructions:
 This will create:
   /usr/src/a52dec-0.7.4-X-src.tar.bz2
   /usr/src/a52dec-0.7.4-X.tar.bz2
+  /usr/src/liba52_0-0.7.4-X.tar.bz2
+  /usr/src/liba52-devel-0.7.4-X.tar.bz2
 
 -------------------------------------------
 
@@ -63,6 +65,7 @@ Files included in the binary packages:
 
 (liba52-devel)
   /usr/include/a52dec/a52.h
+  /usr/include/a52dec/a52_internal.h
   /usr/include/a52dec/attributes.h
   /usr/include/a52dec/audio_out.h
   /usr/include/a52dec/mm_accel.h
@@ -73,6 +76,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.7.4-3 -----
+Included a52_internal.h for xine-lib.
 
 ----- version 0.7.4-2 -----
 Rebuilt with cygport; created separate runtime and devel packages.
