@@ -1,14 +1,15 @@
 DESCRIPTION="ATSC A/52 decoder"
 HOMEPAGE="http://liba52.sourceforge.net/"
 SRC_URI="http://liba52.sourceforge.net/files/${P}.tar.gz"
-
-DOCS="doc/liba52.txt"
+PATCH_URI="0.7.4-oss.patch"
 
 PKG_NAMES="${PN} liba52_0 liba52-devel"
 PKG_HINTS='setup lib devel'
-PKG_CONTENTS[0]='usr/bin/*.exe usr/share/'
-PKG_CONTENTS[1]='usr/bin/*.dll'
-PKG_CONTENTS[2]='usr/include/ usr/lib/'
+a52dec_CONTENTS='usr/bin/*.exe usr/share/'
+liba52_0_CONTENTS='usr/bin/cyga52-0.dll'
+liba52_devel_CONTENTS='usr/include/ usr/lib/'
+
+CYGCONF_ARGS="--enable-shared"
 
 src_install() {
 	cd ${B}
@@ -18,3 +19,4 @@ src_install() {
 	insinto /usr/include/${PN}
 	doins ${S}/liba52/a52_internal.h
 }
+DOCS="doc/liba52.txt"

@@ -1,5 +1,5 @@
 category: Video
-requires: cygwin liba52_0
+requires: cygwin liba52_0 libgcc1
 sdesc: "ATSC A/52 decoder (utilities)"
 ldesc: "liba52 is a free library for decoding ATSC A/52 streams. It is
 released under the terms of the GPL license. The A/52 standard is used
