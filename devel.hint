@@ -1,5 +1,5 @@
 category: Video
-requires: cygwin liba52_0
+requires: liba52_0
 external-source: a52dec
 sdesc: "ATSC A/52 decoder (development)"
 ldesc: "liba52 is a free library for decoding ATSC A/52 streams. It is
