@@ -1,0 +1,28 @@
+NAME="a52dec"
+VERSION=0.7.4
+RELEASE=10
+CATEGORY="Libs"
+SUMMARY="ATSC A/52 (AC-3) decoder library"
+DESCRIPTION="liba52 is a free library for decoding ATSC A/52 (AC-3) streams.
+The A/52 standard is used in a variety of applications, including digital
+television and DVD."
+HOMEPAGE="http://liba52.sourceforge.net/"
+SRC_URI="http://liba52.sourceforge.net/files/a52dec-${VERSION}.tar.gz"
+PATCH_URI="0.7.4-oss.patch"
+
+PKG_NAMES="${NAME} liba52_0 liba52-devel"
+a52dec_CATEGORY="Video"
+a52dec_SUMMARY=${SUMMARY/library/utilities}
+a52dec_CONTENTS='usr/bin/*.exe usr/share/'
+liba52_0_CONTENTS='usr/bin/cyga52-0.dll'
+liba52_devel_CONTENTS='usr/include/ usr/lib/'
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# required for xine-lib
+	insinto /usr/include/${NAME}
+	doins ${S}/liba52/a52_internal.h
+}
+DOCS="doc/liba52.txt"
